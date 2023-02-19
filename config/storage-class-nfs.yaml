@@ -1,0 +1,10 @@
+# source doc: https://kubernetes.io/zh-cn/docs/concepts/storage/storage-classes/#nfs
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: example-nfs
+provisioner: example.com/external-nfs
+parameters:
+  server: nfs-server.example.com
+  path: /share
+  readOnly: "false"
